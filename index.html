@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jaerbi 3</title>
+	<script src="./js/main.js"></script>
+	<script src="./js/vue.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Hello Jaerbi World!!</h1>
+		<!-- Vue 4 js -->
+		<div id="app4">
+			<h3> {{ title }} </h3>
+			<p>ЦИкли ВУ.</p>
+			<button @click="title = 'this Title CHANGED'">Change</button>
+			<button @click="goDestroyed">Destroy</button>
+		</div>
+		<!-- Vue 4 js END -->
+		<!-- Vue 3 js -->
+		<div id="app3">
+		</div>
+		<!-- Vue 3 js END -->
+		<!-- Vue 2 js -->
+		<div id="app2">
+			<h2 ref="vueTwo"> {{ title }} </h2>
+			<button @click="changeTitleOne">Change title One</button>
+		</div>
+		<!-- Vue 2 js END -->
+		<!-- Vue 1 JS -->
+		<div id="app">
+			<h2>{{ title }}</h2>
+			<hr>
+			<div>
+				<h2>Cчеткик : {{ counter }} / {{ counter2 }}</h2>
+				<h2> methods res : {{ resCount() }}</h2>
+				<h3>competed res : {{ computedCount }} </h3>
+				<button @click="add">Add</button>
+				<button @click="sub">Sub</button>
+				<button @click="counter2++">ADD_Count2</button>
+			</div>
+			<hr>
+			<div id="maGame">
+				<ul>
+					<li @click="test" :style="myGameStyle" v-for="number in 98">{{  }}</li>
+				</ul>
+			</div>
+			<hr>
+			<div class="visiblText">
+				<p>Умова відображення контенту</p>
+				<hr>
+				<p>v - show</p>
+					<h3 v-show="!isActShow">I am Here</h3>
+					<h4 v-show="isActShow">NOW i am There!!!</h4>
+					<button @click="isActShow = !isActShow">CLICK</button>
+				<hr>
+				<p>v - if else</p>
+				<span>введіть 1, 2, 3 : </span>
+				<input type="text" v-model="visibleTriger">
+				
+				<template v-if="visibleTriger === '1'">
+					<h2 :style="oneText">Im VISIBLE [ 1 ]</h2>
+					<p :style="oneText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, modi.</p>
+				</template>
+
+				<template v-else-if="visibleTriger === '2'">
+					<h2 :style="twoText">Im VISIBLE [ 2 ] </h2>
+					<p :style="twoText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, modi.</p>
+				</template>
+
+				<template v-else-if="visibleTriger === '3'">
+					<h2 :style="treeText">Im VISIBLE [ 3 ] </h2>
+					<p :style="treeText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, modi.</p>
+				</template>
+
+				<template v-else>
+					<h2>NO i am Not Math!</h2>
+					<p>NO NO NO Lorem ipsum dolor sit amet.</p>
+				</template>
+			</div>
+			<hr>
+			<div class="around_circle">
+				<div 
+					class="circle" 
+					@click="isActive = !isActive"
+					:class="circlColor"
+					 ></div>
+				<div class="circle" :class="[color, {'red': isActive}]"></div>
+					<p>Введіть колір: </p>
+					<p>red, blue, yellow, green</p>
+					<input type="text" v-model="color">
+					<div :style="circlBlock">
+						<div class="circle" :style="circleStyle"></div>
+						<p>Введіть довільний колір</p>
+						<input type="text" v-model="dinamicColor">
+						<input type="text" v-model="height">
+						<p>Введіть довільний розмір</p>
+						<div class="circle" :style="[circleStyle, {'width': height + 'px'}]"></div>
+					</div>
+			</div>
+			<hr>
+			<div>
+				<a href="http://google.com" target="_blank" v-on:click.prevent="">Google</a>
+
+				<h2 class="mouseMove" v-on:mousemove="mouseMove">
+					<span>Позиція курсора миші</span>
+					X = {{ x }} \ Y = {{ y }}
+					<span class="spanMouse" v-on:mousemove.stop="">Зупинити Змінювання х у</span> 
+				</h2>
+				<hr>
+				<label>Клавіатура Алерт (Enter)
+					<input type="text" v-on:keyup.enter="keyUpAlert">
+				</label>
+				<label> V MODEL
+					<input type="text" v-model.lazy="inputValue">
+				</label>
+				<h2>{{ inputValue }}</h2>
+			</div>
+			<hr>
+			<div>
+				<h2 v-on:mouseover="hoverColor">{{ nameCount }} : {{ number }}</h2>
+				<button v-on:click="number++">Add 1</button>
+				<button v-on:click="addNumber(10, 'Додаємо 10', $event)">Add 10</button>
+				<button v-on:click="addNumber(20, 'Додаємо 20', $event)">Add 20</button>
+			</div>
+			<hr>
+			<div>
+				<a v-bind:href="urlGoogl" target="_blank">Gooogol</a>
+				<input  placeholder="Your Name" type="text" v-on:input="changeName">
+				<h2>Hello {{ name }}</h2>
+				<h2>SUM: {{ 10 + 50 }}</h2>
+				<h2>Number: {{ number }}</h2>
+				<h2>Method: {{ seyHello() }}</h2>
+				<h2>If Statment: {{ isOk ? 'I am OK' : 'I am NOT ok!!!' }}</h2>
+				<h2>Random num: {{ randomN }}</h2>
+			</div>
+		</div>
+		<!-- Vue JS END-->
+		
+	</div>
+	
+
+
+<!-- Авто перезагрузка  -->
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<!-- Vue JS  -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #BCFFF1;
+	font-family: sans-serif;
+}
+.wrapper {
+	padding: 10px;
+	max-width: 960px;
+	margin:0 auto;
+	text-align: center;
+	background-color: #EAFFEB;
+}
+h1 {
+	font-size: 36px;
+	margin:5px;
+	color: red;
+}
+h2 {
+	margin: 0;
+	background: #eee;
+	border-radius: 15px;
+}
+input {
+	padding: 3px 5px;
+}
+/*VUE JS*/
+.red {background-color: red;}
+.green {background-color: green;}
+.yellow {background-color: yellow;}
+.blue {background-color:blue;}
+.around_circle {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.around_circle input {
+	height: 30px;
+	margin-top: 10px;
+	width: 100px;
+}
+.around_circle p {
+	width: 100px;
+	padding: 0 20px;
+	background-color:#eee;
+	border-radius: 10px;
+	margin: 0 5px;
+}
+.circle {
+	height: 100px;
+	width: 100px;
+	border:1px solid black;
+	margin: 20px;
+}
+.mouseMove {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 200px;
+	width: 100%;
+}
+.mouseMove span {
+	font-size: 20px;
+}
+.spanMouse {
+	padding: 25px;
+	border-radius: 5px;
+	color: #eee;
+	background-color: green;
+}
+.visiblText p {
+	margin: 0;
+}
+.visiblText input {
+	margin: 10px 0;
+	width: 20px;
+	padding: 7px;
+	text-align: center;
+}
+/*My GAME*/
+#maGame ul {
+	display: flex;
+	list-style: none;
+	flex-wrap: wrap;
+}
+#maGame ul li {
+	width: 60px;
+	height: 60px;
+	border: 1px solid green;
+}
+/* END MY GAME*/
